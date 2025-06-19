@@ -4,7 +4,7 @@ This repository contains a template for creating a DuckDB extension. The main go
 ## Getting started
 First step to getting started is to create your own repo from this template by clicking `Use this template`. Then clone your new repository using 
 ```sh
-git clone --recurse-submodules https://github.com/<you>/<your-new-extension-repo>.git
+git clone --recurse-submodules https://github.com/qiyongbo/duckdb-kafka-extension.git
 ```
 Note that `--recurse-submodules` will ensure DuckDB is pulled which is required to build the extension.
 
@@ -12,7 +12,7 @@ Note that `--recurse-submodules` will ensure DuckDB is pulled which is required 
 ### Managing dependencies
 DuckDB extensions uses VCPKG for dependency management. Enabling VCPKG is very simple: follow the [installation instructions](https://vcpkg.io/en/getting-started) or just run the following:
 ```shell
-cd <your-working-dir-not-the-plugin-repo>
+cd duckdb-kafka-extension
 git clone https://github.com/Microsoft/vcpkg.git
 sh ./vcpkg/scripts/bootstrap.sh -disableMetrics
 export VCPKG_TOOLCHAIN_PATH=`pwd`/vcpkg/scripts/buildsystems/vcpkg.cmake
