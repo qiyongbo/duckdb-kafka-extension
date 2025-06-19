@@ -212,7 +212,7 @@ static void KafkaConsumerFunction(ClientContext &context, TableFunctionInput &da
     }
 }
 
-class KafquackExtension : public Extension {
+class KafkaExtension : public Extension {
 public:
     void Load(DuckDB &db) override {
         vector<LogicalType> args = {
@@ -242,8 +242,8 @@ public:
     }
 
     std::string Version() const override {
-#ifdef KAFQUACK_VERSION
-        return KAFQUACK_VERSION;
+#ifdef KAFKA_VERSION
+        return KAFKA_VERSION;
 #else
         return "0.0.1";
 #endif
@@ -253,12 +253,12 @@ public:
 } // namespace duckdb
 
 extern "C" {
-DUCKDB_EXTENSION_API void kafquack_init(duckdb::DatabaseInstance &db) {
+DUCKDB_EXTENSION_API void kafka_init(duckdb::DatabaseInstance &db) {
     duckdb::DuckDB db_wrapper(db);
-    db_wrapper.LoadExtension<duckdb::KafquackExtension>();
+    db_wrapper.LoadExtension<duckdb::KafkaExtension>();
 }
 
-DUCKDB_EXTENSION_API const char *kafquack_version() {
+DUCKDB_EXTENSION_API const char *kafka_version() {
     return duckdb::DuckDB::LibraryVersion();
 }
 }
