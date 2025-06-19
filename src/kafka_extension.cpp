@@ -238,7 +238,7 @@ public:
     }
 
     std::string Name() override {
-        return "kafquack";
+        return "kfktable";
     }
 
     std::string Version() const override {
